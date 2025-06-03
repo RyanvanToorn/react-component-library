@@ -1,0 +1,30 @@
+/* Root */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+}
+
+/* Hide if empty */
+.cardHeader:empty,
+.cardBody:empty,
+.cardFooter:empty {
+  display: none;
+}

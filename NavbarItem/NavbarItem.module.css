@@ -1,0 +1,20 @@
+/* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
+.navbarItem {
+  display: block;
+}
+
+.navbarItemLabelDiv {
+  display: block;
+}
+
+.navbarItemLabel {
+  display: block;
+}
+
+.navbarItemIconDiv {
+  display: block;
+}
+
+.navbarItemIcon {
+  display: block;
+}
