@@ -9,10 +9,6 @@ import styles from "./Label.module.css";
  * @returns {JSX.Element}
  */
 
-/* === States === */
-
-/* === Functions === */
-
 export default function Label({ text = "", isVisible = true, extendedClass = "", inlineStyles = {} }) {
   if (!isVisible) return null;
 

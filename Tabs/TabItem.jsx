@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./Tabs.module.css";
 
-/* === States === */
-
-/* === Functions === */
+/**
+ * Tab Item Component for navigating content within the same view.
+ *
+ * @param {object} props - Component props
+ * @returns {JSX.Element}
+ */
 
 export default function TabItem({ isCurrentTab = false, content = <div></div>, extendedClass = "", inlineStyles = {} }) {
   if (!isCurrentTab) return null;

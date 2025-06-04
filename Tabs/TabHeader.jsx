@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./Tabs.module.css";
 
-/* === States === */
-
-/* === Functions === */
+/**
+ * Tab Header Component for navigating content within the same view.
+ *
+ * @param {object} props - Component props
+ * @returns {JSX.Element}
+ */
 
 export default function TabHeader({
   title = "title",
@@ -18,7 +21,7 @@ export default function TabHeader({
 
   return (
     <div
-      className={`tab-header ${styles.tabHeader} ${isCurrentTab ? "tab-header--active" : ""} ${
+      className={`tab-header ${styles.tabHeader} ${isCurrentTab ? styles.tabHeaderActive : styles.tabHeaderInactive} ${
         isEnabled ? "tab-header--enabled" : "tab-header--disabled"
       } ${extendedClass}`}
       style={inlineStyles}

@@ -3,11 +3,15 @@ import styles from "./Tabs.module.css";
 import TabHeader from "./TabHeader";
 import TabItem from "./TabItem";
 
-export default function Tabs({ headers = [], items = [], isVertical = false, defaultTab = 0, isVisible = true, extendedClass = "", inlineStyles = {} }) {
-  /* === States === */
-  const [activeTab, setActiveTab] = useState(defaultTab);
+/**
+ * Tab Component for navigating content within the same view.
+ *
+ * @param {object} props - Component props
+ * @returns {JSX.Element}
+ */
 
-  /* === Functions === */
+export default function Tabs({ headers = [], items = [], isVertical = false, defaultTab = 0, isVisible = true, extendedClass = "", inlineStyles = {} }) {
+  const [activeTab, setActiveTab] = useState(defaultTab);
 
   if (!isVisible) return null;
 

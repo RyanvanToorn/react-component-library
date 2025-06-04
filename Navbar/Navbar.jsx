@@ -9,10 +9,6 @@ import styles from "./Navbar.module.css";
  * @returns {JSX.Element}
  */
 
-/* === States === */
-
-/* === Functions === */
-
 export default function Navbar({ items = <div></div>, isVisible = true, extendedClass = "", inlineStyles = {} }) {
   if (!isVisible) return null;
 
