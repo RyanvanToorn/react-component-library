@@ -4,6 +4,10 @@
   font-size: var(--size-m);
 }
 
+.navbarItemsDiv {
+  display: flex;
+}
+
 /* ===== Navbar Item ===== */
 .navbarItem {
   display: block;
