@@ -18,7 +18,7 @@ import styles from "./SwitchToggle.module.css";
 
 /* === Functions === */
 
-export default function SwitchToggle({ isVisible = true, extendedClass = "", inlineStyles = {}, defaultChecked = false, onToggle = () => {} }) {
+export default function SwitchToggle({ defaultChecked = false, onToggle = () => {}, isVisible = true, extendedClass = "", inlineStyles = {} }) {
   if (!isVisible) return null;
 
   const [isChecked, setIsChecked] = useState(defaultChecked);

@@ -1,4 +1,26 @@
 /* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
+/* ===== Navbar ===== */
 .navbar {
   font-size: var(--size-m);
+}
+
+/* ===== Navbar Item ===== */
+.navbarItem {
+  display: block;
+}
+
+.navbarItemLabelDiv {
+  display: block;
+}
+
+.navbarItemLabel {
+  display: block;
+}
+
+.navbarItemIconDiv {
+  display: block;
+}
+
+.navbarItemIcon {
+  display: block;
 }

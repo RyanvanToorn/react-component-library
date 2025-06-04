@@ -12,6 +12,7 @@ import styles from "./Navbar.module.css";
 /* === States === */
 
 /* === Functions === */
+
 export default function Navbar({ items = <div></div>, isVisible = true, extendedClass = "", inlineStyles = {} }) {
   if (!isVisible) return null;
 

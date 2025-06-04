@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./NavbarItem.module.css";
+import styles from "./Navbar.module.css";
 
 export default function NavbarItem({ onClick = () => {}, iconName = "", label, isEnabled = true, isVisible = true, extendedClass = "", inlineStyles = {} }) {
   if (!isVisible) return null;
