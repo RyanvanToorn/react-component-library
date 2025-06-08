@@ -1,4 +1,37 @@
 /* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
 .switchToggle {
-  display: block;
+  /* Hide the default checkbox type input */
+  appearance: none;
+  -webkit-appearance: none;
+  width: 44px;
+  height: 24px;
+  background: #ccc;
+  border-radius: 12px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  vertical-align: middle;
+}
+
+.switchToggle:checked {
+  background: var(--color-blue-dark);
+}
+
+.switchToggle::before {
+  content: "";
+  position: absolute;
+  left: var(--size-xs);
+  top: var(--size-xs);
+  width: var(--size-l);
+  height: var(--size-l);
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.switchToggle:checked::before {
+  transform: translateX(20px);
 }

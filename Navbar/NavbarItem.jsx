@@ -11,7 +11,7 @@ import styles from "./Navbar.module.css";
 
 export default function NavbarItem({
   onClick = () => {},
-  iconName = "",
+  iconName = "house",
   label = "",
   isSelected = false,
   isEnabled = true,
@@ -23,7 +23,7 @@ export default function NavbarItem({
 
   return (
     <div
-      className={`navbar-item ${styles.navbarItem} ${isSelected ? styles.navBarItemSelected : styles.navBarItemUnselected}  ${extendedClass}`}
+      className={`navbar-item ${styles.navbarItem} ${isSelected ? styles.navbarItemSelected : styles.navbarItemUnselected}  ${extendedClass}`}
       style={inlineStyles}
       onClick={isEnabled ? onClick : null}
     >

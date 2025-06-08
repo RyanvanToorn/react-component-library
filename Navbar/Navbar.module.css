@@ -1,30 +1,174 @@
 /* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
+
 /* ===== Navbar ===== */
 .navbar {
-  font-size: var(--size-m);
+  background-color: red;
+}
+
+/* Various Device Types/States */
+.navbarDesktop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 72px; /* Adjust width as needed */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+  background: var(--color-neutral-1);
+  z-index: 100;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.navbarTablet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 64px; /* Adjust height as needed */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  background: var(--color-neutral-1);
+  z-index: 100;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.navbarPhone {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 56px; /* Adjust height as needed */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  background: var(--color-neutral-1);
+  z-index: 100;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.navbarDesktop {
+  --navbar-item-width: 72px;
+  --navbar-item-height: 72px;
+  --navbar-item-icon-size: 28px;
+  --navbar-item-label-size: 14px;
+}
+.navbarTablet {
+  --navbar-item-width: 64px;
+  --navbar-item-height: 64px;
+  --navbar-item-icon-size: 24px;
+  --navbar-item-label-size: 12px;
+}
+.navbarPhone {
+  --navbar-item-width: 56px;
+  --navbar-item-height: 56px;
+  --navbar-item-icon-size: 20px;
+  --navbar-item-label-size: 10px;
 }
 
 .navbarItemsDiv {
-  display: flex;
+  display: inherit;
+  width: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
 }
+/* Container for navbarItems */
 
 /* ===== Navbar Item ===== */
+
 .navbarItem {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--navbar-item-width);
+  height: var(--navbar-item-height);
+  box-sizing: border-box;
+  padding-top: var(--space-xs);
 }
 
+.navbarItemSelected {
+  font-weight: var(--font-weight-bold);
+}
+
+.navbarItemUnselected {
+  font-weight: var(--font-weight-normal);
+}
 .navbarItemLabelDiv {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .navbarItemLabel {
   display: block;
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  direction: ltr;
+  font-size: var(--navbar-item-label-size);
+  box-sizing: border-box;
 }
 
 .navbarItemIconDiv {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 0;
+  box-sizing: border-box;
 }
 
 .navbarItemIcon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: var(--navbar-item-icon-size);
+  box-sizing: border-box;
+}
+
+/* Hover styling */
+.navbarItem:hover {
+  background-color: var(--color-neutral-2);
+  font-weight: var(--font-weight-bold);
+  border: 1px solid var(--color-neutral-5);
+  border-radius: 5px;
+}
+
+.navbarItem.navbarItemSelected:hover {
+  font-weight: var(--font-weight-bold);
+}
+
+.navbarItem:hover .navbarItemIcon {
+  font-size: calc(var(--navbar-item-icon-size) + 4px);
+}
+
+.navbarItem:hover .navbarItemLabel {
+  font-size: calc(var(--navbar-item-label-size) + 2px);
+}
+
+/*On Click styling*/
+.navbarItem:active {
+  transform: scale(0.92);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }

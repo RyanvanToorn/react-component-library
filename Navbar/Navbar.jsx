@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import NavbarItem from "./NavbarItem";
 
@@ -10,26 +10,45 @@ import NavbarItem from "./NavbarItem";
  * @returns {JSX.Element}
  */
 
-export default function Navbar({ items = [], defaultItem = 0, isVisible = true, extendedClass = "", inlineStyles = {} }) {
-  const [activeItem, setActiveItem] = useState(defaultItem);
+export default function Navbar({ items = [], defaultItem = "", isVisible = true, extendedClass = "", inlineStyles = {} }) {
+  const [activeItem, setActiveItem] = useState(() => {
+    if (!defaultItem) return undefined;
+    return items.find((item) => item.key === defaultItem);
+  });
+
+  const [responsiveClass, setResponsiveClass] = useState(styles.navbarDesktop);
+
+  useEffect(() => {
+    function updateResponsiveClass() {
+      if (window.innerWidth < 640) {
+        setResponsiveClass(styles.navbarPhone);
+      } else if (window.innerWidth < 1024) {
+        setResponsiveClass(styles.navbarTablet);
+      } else {
+        setResponsiveClass(styles.navbarDesktop);
+      }
+    }
+    updateResponsiveClass();
+    window.addEventListener("resize", updateResponsiveClass);
+    return () => window.removeEventListener("resize", updateResponsiveClass);
+  }, []);
 
   const handleItemClick = (item) => {
     setActiveItem(item);
-    console.log(`Navbar Item changed: ` + item.label);
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className={`navbar ${styles.navbar} ${extendedClass}`} style={inlineStyles}>
-      <div className={`navbar__items-div ${styles.navBarItemsDiv}`}>
+    <div className={`navbar ${responsiveClass} ${styles.navbar} ${extendedClass}`} style={inlineStyles}>
+      <div className={`navbar__items-div ${styles.navbarItemsDiv}`}>
         {items.map((item) => (
           <NavbarItem
             key={item.key}
             onClick={() => handleItemClick(item)}
             iconName={item.iconName}
             label={item.label}
-            isSelected={item.isSelected === activeItem}
+            isSelected={item === activeItem}
             isEnabled={item.isEnabled}
             isVisible={item.isVisible}
             extendedClass={item.extendedClass}
