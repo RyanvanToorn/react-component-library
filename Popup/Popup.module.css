@@ -1,10 +1,85 @@
 /* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
 .Popup {
+  position: fixed; /* Centered in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-neutral-1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 4px rgba(0, 0, 0, 0.08);
+  min-width: 320px;
+  max-width: 90vw;
+  min-height: 120px;
+  z-index: 1010; /* Above the backdrop */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  overflow: hidden;
+  animation: popup-fade-in 0.2s;
+  padding: var(--space-s);
 }
 
 /* ===== Popup Header ===== */
+.PopupHeader {
+  min-height: 0;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PopupHeader:empty {
+  display: none;
+}
 
 /* ===== Popup Content ===== */
+.PopupContent {
+  flex-grow: 1;
+}
+/* ===== Popup Footer ===== */
+.PopupFooter {
+  min-height: 0;
+  min-width: 100%;
+}
+
+.PopupFooter:empty {
+  display: none;
+}
+
+/* ===== Close Button ===== */
+.CloseButton {
+  background-color: var(--color-neutral-2);
+  border: 0;
+}
+
+.CloseButton:hover {
+  background-color: var(--color-neutral-3);
+}
+
+/* ===== Popup Backdrop ===== */
+.PopupBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Popup Animations ===== */
+
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
