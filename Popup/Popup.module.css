@@ -1,0 +1,10 @@
+/* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
+.Popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ===== Popup Header ===== */
+
+/* ===== Popup Content ===== */
