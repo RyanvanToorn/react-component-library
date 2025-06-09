@@ -44,8 +44,8 @@ const PopupHeader = ({ title, subtitle, onClose, showCloseButton }) => {
   return (
     <div className={`popup-header ${styles.PopupHeader}`}>
       <div className="popup-header__layout-container-left">
-        <div className="popup-header__title">{title}</div>
-        <div className="popup-header__subtitle">{subtitle}</div>
+        <div className={`popup-header__title ${styles.PopupHeaderTitle}`}>{title}</div>
+        <div className={`popup-header__subtitle ${styles.PopupHeaderSubtitle}`}>{subtitle}</div>
       </div>
       <div className="popup-header__layout-container-right">
         <CloseButton onClose={onClose} />
@@ -65,7 +65,7 @@ const PopupFooter = ({ footerContents }) => {
 const CloseButton = ({ onClose }) => {
   return (
     <button className={`popup-close-button ${styles.CloseButton}`} onClick={onClose}>
-      X
+      ❌
     </button>
   );
 };
