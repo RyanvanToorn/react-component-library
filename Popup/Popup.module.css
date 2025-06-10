@@ -26,8 +26,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: var(--space-xs);
+  padding-bottom: var(--space-s);
   border-bottom: 1px solid var(--color-neutral-3);
+  overflow: hidden;
 }
 
 .PopupHeader:empty {
@@ -37,14 +38,26 @@
 .PopupHeaderTitle {
   font-size: var(--font-size-h5);
   font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
 }
 
 .PopupHeaderSubtitle {
+  white-space: nowrap;
+}
+
+.PopupHeaderLayoutContainerLeft {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.PopupHeaderLayoutContainerRight {
+  flex-shrink: 0;
 }
 
 /* ===== Popup Content ===== */
 .PopupContent {
   flex-grow: 1;
+  padding-bottom: var(--space-s);
 }
 /* ===== Popup Footer ===== */
 .PopupFooter {
@@ -54,6 +67,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  padding-bottom: var(--space-s);
 }
 
 .PopupFooter:empty {

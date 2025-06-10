@@ -43,11 +43,11 @@ function Popup({
 const PopupHeader = ({ title, subtitle, onClose, showCloseButton }) => {
   return (
     <div className={`popup-header ${styles.PopupHeader}`}>
-      <div className="popup-header__layout-container-left">
+      <div className={`${styles.PopupHeaderLayoutContainerLeft} `}>
         <div className={`popup-header__title ${styles.PopupHeaderTitle}`}>{title}</div>
         <div className={`popup-header__subtitle ${styles.PopupHeaderSubtitle}`}>{subtitle}</div>
       </div>
-      <div className="popup-header__layout-container-right">
+      <div className={`${styles.PopupHeaderLayoutContainerRight} `}>
         <CloseButton onClose={onClose} isVisible={showCloseButton} />
       </div>
     </div>
