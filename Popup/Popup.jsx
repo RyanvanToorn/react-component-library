@@ -48,7 +48,7 @@ const PopupHeader = ({ title, subtitle, onClose, showCloseButton }) => {
         <div className={`popup-header__subtitle ${styles.PopupHeaderSubtitle}`}>{subtitle}</div>
       </div>
       <div className="popup-header__layout-container-right">
-        <CloseButton onClose={onClose} />
+        <CloseButton onClose={onClose} isVisible={showCloseButton} />
       </div>
     </div>
   );
@@ -62,7 +62,19 @@ const PopupFooter = ({ footerContents }) => {
   return <div className={`popup-footer ${styles.PopupFooter}`}>{footerContents}</div>;
 };
 
-const CloseButton = ({ onClose }) => {
+const CloseButton = ({ onClose, isVisible = false }) => {
+  if (!isVisible) return null;
+
+  return (
+    <button className={`popup-close-button ${styles.CloseButton}`} onClick={onClose}>
+      ❌
+    </button>
+  );
+};
+
+const ExpandButton = ({ onExpand, isVisible = false }) => {
+  if (!isVisible) return null;
+
   return (
     <button className={`popup-close-button ${styles.CloseButton}`} onClick={onClose}>
       ❌
