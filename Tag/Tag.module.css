@@ -1,0 +1,11 @@
+/* Root ~ Any class in this .module.css file is scoped to the component (CSS Modules) */
+.Tag {
+  display: block;
+  text-align: center;
+  min-width: 0;
+  max-width: 100%;
+  width: fit-content;
+  padding: var(--space-s) var(--space-m);
+  border-radius: 8px;
+  font-size: var(--font-size-l);
+}

@@ -6,3 +6,4 @@ export { default as SwitchToggle } from "./SwitchToggle/SwitchToggle.jsx";
 export { default as Tabs } from "./Tabs/Tabs.jsx";
 export { default as Popup } from "./Popup/Popup.jsx";
 export { default as Accordion } from "./Accordion/Accordion.jsx";
+export { default as Tag } from "./Tag/Tag.jsx";
